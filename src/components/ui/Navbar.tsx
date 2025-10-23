@@ -28,9 +28,9 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <button onClick={toggleTheme} className='place-self-end p-2 cursor-pointer'>
+      <motion.button whileTap={{ rotate: -90 }} onClick={toggleTheme} className='place-self-end p-2 cursor-pointer focus:outline-none'>
         {theme === 'dark' ? <IconMoonFilled /> : <IconSunFilled />}
-      </button>
+      </motion.button>
     </nav>
   )
 }
