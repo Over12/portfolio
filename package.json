@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource-variable/onest": "^5.2.11",
+    "@ridemountainpig/svgl-react": "^1.0.13",
     "@tabler/icons-react": "^3.35.0",
     "@tailwindcss/vite": "^4.1.15",
     "motion": "^12.23.24",
