@@ -16,7 +16,7 @@ export default function App() {
           <Route path='/' element={<Inicio />} />
           <Route path='/proyectos' element={<Proyectos />} />
         </Routes>
-        <motion.span style={{ x, y }} className='pointer-events-none absolute -translate-1/2 size-14 top-0 backdrop-invert-100 rounded-full z-50' />
+        <motion.span style={{ x, y }} className='pointer-events-none fixed -translate-1/2 size-14 top-0 backdrop-invert-100 rounded-full z-50' />
       </div>
     </BrowserRouter>
   )
