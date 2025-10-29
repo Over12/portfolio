@@ -14,7 +14,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className='fixed grid grid-cols-3 inset-x-0 px-10 py-5 z-50 cursor-none'>
+    <nav className='absolute grid grid-cols-3 inset-x-0 px-10 py-5 z-50 cursor-none'>
       <p className='text-3xl font-medium'>pedro.avalos</p>
       <ul className='flex w-fit place-self-center items-center justify-center gap-5'>
         {links.map(({ to, label }) => (
@@ -22,7 +22,7 @@ export default function Navbar() {
             <Link to={to} className='p-2 cursor-none'>{label}</Link>
 
             {pathname === to && (
-              <motion.span layoutId='nav-indicator' transition={{ type: 'spring', stiffness: 700, damping: 30 }} className='absolute inset-x-0 bottom-0 h-0.5 bg-primary'/>
+              <motion.span layoutId='nav-indicator' initial={false} transition={{ type: 'spring', stiffness: 700, damping: 30 }} className='absolute inset-x-0 bottom-0 h-0.5 bg-primary'/>
             )}
           </li>
         ))}
