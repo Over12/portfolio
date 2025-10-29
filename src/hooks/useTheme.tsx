@@ -1,6 +1,5 @@
 import { useLayoutEffect, useState } from 'react'
-
-type Theme = 'light' | 'dark'
+import type { Theme } from '../types/Theme'
 
 export default function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
