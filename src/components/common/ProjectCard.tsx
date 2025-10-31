@@ -5,7 +5,7 @@ import Pill from './Pill'
 
 export default function ProjectCard({ project, index }: { project: Project, index: number }) {
   return (
-    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ delay: index * 0.1 }} className='w-80 backdrop-brightness-200 border border-gray-500/20 flex flex-col rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-shadow duration-500'>
+    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ delay: index * 0.1 }} className='w-80 backdrop-brightness-200 border border-gray-500/20 flex flex-col overflow-hidden shadow-lg group hover:shadow-2xl transition-shadow duration-500'>
       <div className='aspect-video overflow-hidden'>
         <img src={project.image} alt={`Imagen de web ${project.title}`} className='size-full object-cover group-hover:scale-110 transition-transform ease-in-out duration-500' />
       </div>
