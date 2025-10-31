@@ -4,6 +4,7 @@ import useMouse from './hooks/useMouse'
 import Navbar from './components/ui/Navbar'
 import Inicio from './pages/Inicio'
 import Proyectos from './pages/Proyectos'
+import Contacto from './pages/Contacto'
 
 export default function App() {
   const { x, y } = useMouse()
@@ -27,6 +28,7 @@ function InnerRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path='/' element={<Inicio />} />
         <Route path='/proyectos' element={<Proyectos />} />
+        <Route path='/contacto' element={<Contacto />} />
       </Routes>
     </AnimatePresence>
   )
