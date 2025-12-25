@@ -1,25 +1,31 @@
+import { AnimatePresence, motion } from 'motion/react'
+import ContactForm from '../components/ui/ContactForm'
+import useNotification from '../hooks/useNotification'
+
 export default function Contacto() {
+  const { notification, showNotification } = useNotification()
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText('overcxde.dev@gmail.com')
+    showNotification(true)
+  }
+
   return (
-    <section className='min-h-svh flex items-center justify-between p-10'>
-      <p className='self-baseline mt-48 w-1/2 text-pretty text-4xl'>Explorando nuevas oportunidades para seguir creciendo como desarrollador.</p>
-      <form className='mx-auto flex flex-col backdrop-brightness-200 p-5 shadow-lg gap-5 items-center justify-center'>
-        <div className="flex flex-col w-80">
-          <label htmlFor='name'>Nombre</label>
-          <input type='text' id='name' name='name' placeholder='John Doe' required className='border-b-2 border-primary px-2 py-1 placeholder-gray-500 focus:border-accent focus:outline-none transition-colors' />
+    <>
+      <section className='relative min-h-svh flex items-center justify-between p-10 cursor-none'>
+        <motion.p initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -15 }} className='self-baseline mt-48 w-1/2 text-pretty text-4xl'>Explorando nuevas oportunidades para seguir creciendo como desarrollador.</motion.p>
+        <ContactForm />
+        <div className='absolute bottom-10 left-10'>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} onClick={copyToClipboard} className='underline hover:text-primary transition-colors'>¿Prefieres copiar mi email?</motion.p>
         </div>
-        <div className="flex flex-col w-80">
-          <label htmlFor='email'>Email</label>
-          <input type='email' id='email' name='email' placeholder='john.doe@example.com' required className='border-b-2 border-primary px-2 py-1 placeholder-gray-500 focus:border-accent focus:outline-none transition-colors' />
-        </div>
-        <div className="flex flex-col w-80">
-          <label htmlFor='message' className='mb-1'>Mensaje</label>
-          <textarea name='message' id='message' placeholder='Escribe tu mensaje aquí...' cols={30} rows={3} required className='border-2 border-primary px-2 py-1 placeholder-gray-500 resize-none focus:border-accent focus:outline-none transition-colors'></textarea>
-        </div>
-        <button type='submit' className='group relative border-2 hover:text-white border-primary py-2 w-full hover:border-accent transition-colors duration-500'>
-          <div className='absolute inset-y-0 w-0 group-hover:w-full bg-accent -z-10 transition-all duration-700 ease-in-out' />
-          Enviar
-        </button>
-      </form>
-    </section>
+      </section>
+      <AnimatePresence mode='wait'>
+        {notification.show && (
+          <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'spring', stiffness: 400, damping: 30 }} className={`absolute z-30 right-0 bottom-5 px-3 py-2 shadow-lg backdrop-brightness-200 border-l-4 ${notification.success ? 'border-green-500' : 'border-red-500'} cursor-none`}>
+            {notification.success ? 'Correo copiado en el portapapeles' : notification.error}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 };
