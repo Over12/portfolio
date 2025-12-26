@@ -14,7 +14,7 @@ export default function App() {
       <div className='bg-background text-text transition-colors relative overflow-hidden'>
         <Navbar />
         <InnerRoutes />
-        <motion.span style={{ x, y }} className='pointer-events-none fixed -translate-1/2 size-14 top-0 backdrop-invert-100 rounded-full z-50' />
+        <motion.span style={{ x, y }} className='hidden sm:block pointer-events-none fixed -translate-1/2 size-14 top-0 backdrop-invert-100 rounded-full z-50' />
       </div>
     </BrowserRouter>
   )
