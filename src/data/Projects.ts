@@ -1,4 +1,8 @@
 import type { Project } from '../types/Project'
+import KamiHubImage from '../assets/images/projects/KamiHub.webp'
+import ShoplyxImage from '../assets/images/projects/Shoplyx.webp'
+import WeathxrImage from '../assets/images/projects/Weathxr.webp'
+import SerintegImage from '../assets/images/projects/Serinteg.webp'
 
 export const projects: Project[] = [
   {
@@ -7,7 +11,7 @@ export const projects: Project[] = [
     description: 'Página web para poder ver información de animes, temporada actual y próximos estrenos.',
     url: 'https://kamihub.vercel.app',
     repository: 'https://github.com/Over12/kami-hub',
-    image: 'src/assets/images/projects/KamiHub.webp',
+    image: KamiHubImage,
     tech: ['NextJS', 'Tailwind', 'TypeScript']
   },
   {
@@ -16,7 +20,7 @@ export const projects: Project[] = [
     description: 'Página web que simula un e-commerce con carrito de compras.',
     url: 'https://shoplyx.netlify.app',
     repository: 'https://github.com/Over12/app-shop',
-    image: 'src/assets/images/projects/Shoplyx.webp',
+    image: ShoplyxImage,
     tech: ['React', 'Tailwind', 'Motion']
   },
   {
@@ -25,7 +29,7 @@ export const projects: Project[] = [
     description: 'Página web para visualizar el clima, humedad y velocidad de viento del lugar que desees.',
     url: 'https://weathxr.netlify.app',
     repository: 'https://github.com/Over12/weather-app',
-    image: 'src/assets/images/projects/Weathxr.webp',
+    image: WeathxrImage,
     tech: ['React', 'Tailwind', 'Motion']
   },
   {
@@ -34,7 +38,7 @@ export const projects: Project[] = [
     description: 'Página web realizada para la empresa SERINTEG, con información sobre sus servicios y contacto.',
     url: 'https://serinteg.netlify.app',
     repository: 'https://github.com/Over12/serinteg-web',
-    image: 'src/assets/images/projects/Serinteg.webp',
+    image: SerintegImage,
     tech: ['React', 'EmailJS']
   }
 ]
