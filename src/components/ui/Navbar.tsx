@@ -46,7 +46,7 @@ export default function Navbar() {
           <motion.ul initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className='sm:hidden absolute inset-x-0 top-24 px-5 flex justify-between items-center z-30'>
             {links.map(({ to, label }) => (
               <li key={to} className='relative'>
-                <Link to={to} className='p-2'>{label}</Link>
+                <Link to={to} className='p-2 text-sm'>{label}</Link>
 
                 {pathname === to && (
                   <motion.span layoutId='nav-indicator-mobile' initial={false} transition={{ type: 'spring', stiffness: 700, damping: 30 }} className='absolute inset-x-0 bottom-0 h-0.5 bg-primary' />
